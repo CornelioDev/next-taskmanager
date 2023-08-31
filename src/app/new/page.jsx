@@ -1,26 +1,30 @@
 'use client'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 export const metadata = {
   title: 'Create New Task'
 }
 
-const createTask = async (e) => {
-  e.preventDefault()
-
-  const title = e.target.title.value
-  const description = e.target.description.value
-  
-  await fetch('api/tasks', {
-    method: 'POST',
-    body: JSON.stringify({title, description}),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-}
-
 const NewTask = () => {
+  const redirect = useRouter()
+  const createTask = async (e) => {
+    e.preventDefault()
+
+    const title = e.target.title.value
+    const description = e.target.description.value
+
+    await fetch('api/tasks', {
+      method: 'POST',
+      body: JSON.stringify({ title, description }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+
+    redirect.push('/')
+  }
+
   return (
     <div className='h-screen flex flex-col mt-28 items-center gap-4'>
       <h1 className='text-4xl font-bold text-slate-100'>{metadata.title}</h1>
