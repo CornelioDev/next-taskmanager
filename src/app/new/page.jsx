@@ -2,7 +2,11 @@ import React from 'react'
 
 const NewTask = () => {
   return (
-    <div>New Task</div>
+    <form>
+      <input type="text" id='title'/>
+      <textarea id="description" rows="10"></textarea>
+      <button>Create Task</button>
+    </form>
   )
 }
 
