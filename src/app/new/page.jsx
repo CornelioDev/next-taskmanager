@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Create New Task'
 }
 
-const NewTask = () => {
+const TaskForm = () => {
   const redirect = useRouter()
   const createTask = async (e) => {
     e.preventDefault()
@@ -37,4 +37,4 @@ const NewTask = () => {
   )
 }
 
-export default NewTask
+export default TaskForm
