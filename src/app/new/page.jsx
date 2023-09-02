@@ -33,7 +33,7 @@ const TaskForm = ({ params }) => {
       headers: {
         'Content-Type': 'application/json'
       }
-    })
+    })    
     router.refresh()
     router.push('/')
   }
