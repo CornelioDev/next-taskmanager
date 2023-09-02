@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Task = ({ task }) => {
+const TaskCard = ({ task }) => {
     return (
         <Link href={`/tasks/edit/${task.id}`}>
             <div className='bg-slate-600 hover:bg-slate-700 p-3 flex flex-col hover:cursor-pointer place-content-between'>
@@ -15,4 +15,4 @@ const Task = ({ task }) => {
     )
 }
 
-export default Task
+export default TaskCard
