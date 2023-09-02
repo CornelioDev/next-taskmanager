@@ -1,10 +1,12 @@
 import React from 'react'
-import Task from './components/Task'
+import TaskCard from './components/Task'
+import { prisma } from '@/libs/prisma'
 
 async function loadTasks() {
-  const response = await fetch('http://localhost:3000/api/tasks')
-  const data = await response.json()
-  return data
+  // const response = await fetch('http://localhost:3000/api/tasks')
+  // const data = await response.json()
+  // return data
+  return await prisma.task.findMany()
 }
 
 const HomePage = async () => {
@@ -12,7 +14,7 @@ const HomePage = async () => {
   return (
     <div className='container mx-auto grid grid-cols-3 mt-5 gap-3 text-slate-100'>
       {tasks.map((task) => (
-        <Task key={task.id} task={task} />
+        <TaskCard key={task.id} task={task} />
       ))}
     </div>
   )
