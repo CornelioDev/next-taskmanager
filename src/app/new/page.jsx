@@ -33,7 +33,7 @@ const TaskForm = ({ params }) => {
       headers: {
         'Content-Type': 'application/json'
       }
-    })    
+    })
     router.refresh()
     router.push('/')
   }
@@ -58,7 +58,16 @@ const TaskForm = ({ params }) => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}></textarea>
 
-        <button type='submit' className='bg-sky-600 text-slate-100 p-2 rounded-md hover:bg-sky-800 transition-colors'>Create Task</button>
+        <div className="flex justify-between">
+          <button type='submit' className='bg-sky-600 text-slate-100 p-2 rounded-md hover:bg-sky-800 transition-colors'>Create Task</button>
+          <button type='buton' className='bg-red-700 text-slate-100 p-2 rounded-md hover:bg-red-900 transition-colors' onClick={
+            async function () {
+              await fetch(`/api/tasks/${params.id}`, {
+                method: 'DELETE'
+              })
+            }
+          }>Delete</button>
+        </div>
       </form>
     </div>
   )
