@@ -1,3 +1,4 @@
+import Navbar from './components/Navbar'
 import './globals.css'
 export const metadata = {
   title: 'Next.js',
@@ -8,6 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-slate-800">
+        <Navbar />
         {children}
       </body>
     </html>
