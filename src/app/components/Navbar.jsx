@@ -3,12 +3,12 @@ import Link from "next/link";
 const Navbar = () => {
 
     const routes = [
-        { "title": "New Task", "slug": "new" },
-        { "title": "404", "slug": "random-route" },
+        { "title": "New Post", "slug": "new" },
+        // { "title": "404", "slug": "random-route" },
     ]
 
     return (
-        <div className=" bg-slate-700">
+        <div className=" bg-slate-700 px-4">
             <nav className="flex place-content-between place-items-center text-slate-200 container mx-auto mb-5 py-4">
                 <div id="logo" className="hover:text-slate-500 text-2xl font-bold">
                     <Link href={'/'}>

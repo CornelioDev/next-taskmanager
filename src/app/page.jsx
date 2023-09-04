@@ -12,7 +12,7 @@ async function loadTasks() {
 const HomePage = async () => {
   const tasks = await loadTasks()
   return (
-    <div className='container mx-auto grid grid-cols-3 gap-3 text-slate-100'>
+    <div className='container mx-auto grid md:grid-cols-3 gap-3 px-2 text-slate-100'>
       {tasks.map((task) => (
         <TaskCard key={task.id} task={task} />
       ))}

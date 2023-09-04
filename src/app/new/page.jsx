@@ -39,7 +39,7 @@ const TaskForm = ({ params }) => {
   }
 
   return (
-    <div className='h-screen flex flex-col mt-28 items-center gap-4'>
+    <div className='h-screen flex flex-col items-center gap-4 px-2'>
       <h1 className='text-4xl font-bold text-slate-100'>{params.id ? 'Edit Task' : metadata.title}</h1>
       <form className='bg-slate-600 p-10 rounded text-gray-600 text-lg' onSubmit={processTask}>
         <input
